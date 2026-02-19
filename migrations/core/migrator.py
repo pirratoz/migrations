@@ -68,7 +68,7 @@ class Migrator:
                             message_log += f"\n    Update ABS Path [\n        {row['abs_path']} -> \n        {abs_path}\n    ]"
                             await self.connection.execute(sql_update_abspath, abs_path, sql_checksum)
                         if message_log != "":
-                            self.log.message(f"Info migration:\n{message_log}")
+                            self.log.message(f"info migration:\n{message_log}")
                         self.log.skipped(abs_path)
                         count_skipped += 1
         except Exception as error:

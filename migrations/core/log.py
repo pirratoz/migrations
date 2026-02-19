@@ -5,13 +5,11 @@ class MigrationLog:
         self.skipped_msg = "[X] skipped: {}"
         self.failed_msg  = "[!] failed:  {}"
         self.error_msg   = "[~] error:   {}"
-        self.result_all_msg      = "[R] result:   {}"
-        self.result_applied_msg  = "[R] applied:  {}"
-        self.result_skipped_msg  = "[R] skipped:  {}"
+        self.result_msg  = "[R] result:  {}\n    applied:  {}\n    skipped:  {}"
 
-    def _print(self, template: str, name: str) -> None:
+    def _print(self, template: str, *args) -> None:
         if self.log:
-            print(template.format(name))
+            print(template.format(*args))
 
     def skipped(self, migration_name: str) -> None:
         self._print(self.skipped_msg, migration_name)
@@ -30,9 +28,6 @@ class MigrationLog:
         self._print(self.error_msg, error)
     
     def result(self, count_all: int, count_applied: int, count_skipped: int) -> None:
-        if self.log:
-            _count = count_applied + count_skipped
-            _percent = round(_count / count_all * 100, 2)
-            self._print(self.result_all_msg, f"{_count} / {count_all} [{_percent}%]")
-            self._print(self.result_skipped_msg, f"{count_skipped}")
-            self._print(self.result_applied_msg, f"{count_applied}")
+        _count = count_applied + count_skipped
+        _percent = round(_count / count_all * 100, 2)
+        self._print(self.result_msg, f"{_count} / {count_all} [{_percent}%]", count_skipped, count_applied)

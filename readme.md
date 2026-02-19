@@ -32,7 +32,7 @@
 ```text
 [X] skipped: /home/user/example_migrations/create_users.sql
 [X] skipped: /home/user/example_migrations/folder1/add_column_name_users.sql
-[M] Info migration:
+[M] info migration:
     Update filename [
         create_cart2.sql -> 
         create_cart.sql
@@ -42,7 +42,7 @@
         /home/user/example_migrations/folder1/folder2/create_cart.sql
     ]
 [X] skipped: /home/user/example_migrations/folder1/folder2/create_cart.sql
-[M] Info migration:
+[M] info migration:
     Update filename [
         create_cart.sql -> 
         create_cart2.sql
@@ -52,9 +52,9 @@
         /home/user/example_migrations/folder3/create_cart2.sql
     ]
 [X] skipped: /home/user/example_migrations/folder3/create_cart2.sql
-[R] result:   4 / 4 [100.0%]
-[R] skipped:  4
-[R] applied:  0
+[R] result:  4 / 4 [100.0%]
+    applied:  4
+    skipped:  0
 [M] 2026-02-19 18:17:21 | 2dadaad3 | /home/user/example_migrations/create_users.sql
 [M] 2026-02-19 18:17:21 | 7c634a45 | /home/user/example_migrations/folder1/add_column_name_users.sql
 [M] 2026-02-19 18:17:21 | 82d4cc03 | /home/user/example_migrations/folder3/create_cart2.sql
@@ -75,5 +75,5 @@
 Добавьте строчку в requirements.txt указав нужную версию.
 
 ```bash
-migrations @ git+https://github.com/pirratoz/migrations@v0.1.0
+migrations @ git+https://github.com/pirratoz/migrations@v0.1.1
 ```
