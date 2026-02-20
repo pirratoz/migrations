@@ -75,5 +75,5 @@
 Добавьте строчку в requirements.txt указав нужную версию.
 
 ```bash
-migrations @ git+https://github.com/pirratoz/migrations@v0.1.4
+migrations @ git+https://github.com/pirratoz/migrations@v0.1.5
 ```

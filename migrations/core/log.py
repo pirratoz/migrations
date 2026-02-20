@@ -30,4 +30,4 @@ class MigrationLog:
     def result(self, count_all: int, count_applied: int, count_skipped: int) -> None:
         _count = count_applied + count_skipped
         _percent = round(_count / count_all * 100, 2)
-        self._print(self.result_msg, f"{_count} / {count_all} [{_percent}%]", count_skipped, count_applied)
+        self._print(self.result_msg, f"{_count} / {count_all} [{_percent}%]", count_applied, count_skipped)
