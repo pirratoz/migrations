@@ -9,9 +9,10 @@ with open("requirements.txt") as f:
 
 setup(
     name="migrations",
-    version="0.1.2",
+    version="0.1.3",
     packages=find_packages(),
     install_requires=install_requires,
+    include_package_data=True,
     author="Trushin Pavel",
     description="Asynchronous SQL migration tool",
 )
